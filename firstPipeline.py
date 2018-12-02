@@ -253,7 +253,7 @@ def custom_generator(df, y_encoded, target_size = (299,299,3), batch_size = 1, v
 # In[ ]:
 
 
-batch_size = 32
+batch_size = 16
 steps_per_epoch = len(train_df)//batch_size
 # validation_steps = len(train_df)//batch_size
 epochs = 100
