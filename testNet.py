@@ -104,7 +104,7 @@ metrics = ['accuracy']
 loss = 'categorical_crossentropy'
 
 model.compile(loss = loss, optimizer = optimizer, metrics=metrics)
-model.load_weights("2018-12-02 01-22-15.hdf5")
+model.load_weights("weights/2018-12-02 01-22-15.hdf5")
 
 
 # In[11]:
