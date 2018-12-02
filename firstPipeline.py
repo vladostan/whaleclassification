@@ -239,7 +239,7 @@ def custom_generator(df, y_encoded, target_size = (299,299,3), batch_size = 1, v
             if i == len(df):
                 i = 0
                 
-            x = get_np_image(df = train_df["Image"][i], target_size = target_size)
+            x = get_np_image(df = df["Image"][i], target_size = target_size)
             y = y_encoded[i]
             
             i += 1
@@ -247,13 +247,13 @@ def custom_generator(df, y_encoded, target_size = (299,299,3), batch_size = 1, v
             x_batch.append(x)
             y_batch.append(y)
             
-        yield (x_batch,y_batch)
+        yield (np.array(x_batch),np.array(y_batch))
 
 
 # In[ ]:
 
 
-batch_size = 4
+batch_size = 32
 steps_per_epoch = len(train_df)//batch_size
 # validation_steps = len(train_df)//batch_size
 epochs = 100
